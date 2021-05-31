@@ -76,8 +76,11 @@ function updateExp(a){
         }
     }
     else {
-        op = a;
-        exp += a;
+        if (op==="" && val.length!==0){
+            op = a;
+            exp += a;    
+        }
+        
     }
     document.getElementById("bar").innerHTML = exp;
 }
