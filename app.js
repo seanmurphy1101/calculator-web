@@ -29,8 +29,30 @@ function raiseExp(arg1, arg2){
     return Math.pow(arg1,arg2);
 }
 
+function sinExp(){
+    if (val.length===0){
+        return ("one arg necessary");
+    }
+    return Math.sin(val[0]);
+}
+
+function cosExp(){
+    if (val.length===0){
+        return ("one arg necessary");
+    }
+    return Math.cos(val[0]);
+}
+
+function logExp(){
+    if (val.length===0){
+        return ("one arg necessary");
+    }
+    return Math.log(val[0]);
+}
+
+
 function operate(){
-    if (val[1]===undefined){
+    if (val[1]===undefined && op!=="ln" && op!=="sin" && op!=="cos"){
         return;
     }
     let res;
@@ -49,7 +71,17 @@ function operate(){
     else if (op==="^"){
         res = raiseExp(val[0], val[1]);
     }
+    else if (op==="ln"){
+        res = logExp();
+    }
+    else if (op==="sin"){
+        res = sinExp();
+    }
+    else if (op==="cos"){
+        res = cosExp();
+    }
     clearBar();
+    console.log(res);
     document.getElementById("bar").innerHTML = res;
     if (res.toString().includes('.')){
         isDec1 = true;
@@ -99,6 +131,7 @@ function updateExp(a){
                 }
                 else {
                     val[1]=val[1]+a*Math.pow(10, -dec2-1);
+                    console.log(val[1]);
                     val[1]=parseFloat(val[1].toFixed(dec2+1));
                     dec2+=1;
                 }
@@ -174,9 +207,10 @@ function deleteItem(){
             let index = exp.indexOf(op);
             let temp = exp.slice(index+1, exp.length)
             val[1]=parseFloat(temp);
+            console.log(val[1]);
             dec2-=1;
         }
-        if (val[1].toString().length>1){
+        else if (val[1].toString().length>1){
             val[1]=(val[1]-(val[1]%10))/10;
         }
         else {
@@ -193,3 +227,9 @@ function deleteItem(){
     }
     document.getElementById("bar").innerHTML = exp;
 }
+
+/*
+function changeClass() {
+    $(this).toggleClass('buttonClass');
+  };
+*/
