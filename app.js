@@ -81,7 +81,6 @@ function operate(){
         res = cosExp();
     }
     clearBar();
-    console.log(res);
     document.getElementById("bar").innerHTML = res;
     if (res.toString().includes('.')){
         isDec1 = true;
@@ -107,7 +106,6 @@ function updateExp(a){
                     return;
                 }
                 else {
-                    console.log(val[0]);
                     val[0]=val[0]+a*Math.pow(10, -dec1-1);
                     val[0]=parseFloat(val[0].toFixed(dec1+1));
                     dec1+=1;
@@ -131,7 +129,6 @@ function updateExp(a){
                 }
                 else {
                     val[1]=val[1]+a*Math.pow(10, -dec2-1);
-                    console.log(val[1]);
                     val[1]=parseFloat(val[1].toFixed(dec2+1));
                     dec2+=1;
                 }
@@ -207,7 +204,6 @@ function deleteItem(){
             let index = exp.indexOf(op);
             let temp = exp.slice(index+1, exp.length)
             val[1]=parseFloat(temp);
-            console.log(val[1]);
             dec2-=1;
         }
         else if (val[1].toString().length>1){
@@ -227,9 +223,3 @@ function deleteItem(){
     }
     document.getElementById("bar").innerHTML = exp;
 }
-
-/*
-function changeClass() {
-    $(this).toggleClass('buttonClass');
-  };
-*/
