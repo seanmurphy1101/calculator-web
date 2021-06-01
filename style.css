@@ -30,13 +30,13 @@
     border: 2px solid;
     border-radius: 1ch;
     width: 340px;
-    margin: 20px auto auto auto;
+    margin: 20px auto auto 25px;
     height: 500px;
     background-color: rgb(100, 98, 98);
     box-shadow: 4px 4px black;
+    position: absolute;
 }
 .key{
-    display: inline-block;
     height: 40px;
     width: 80px;
     border-radius: 2px;
@@ -67,4 +67,8 @@ button:hover{
 }
 .buttonClass{
     margin: 8px 10px 10px 8px;
+}
+button:active{
+    box-shadow: none;
+    margin: 10px 8px 10px 12px;
 }
