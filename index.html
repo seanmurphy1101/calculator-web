@@ -12,11 +12,10 @@
         <div class="display-bar" id="bar">
         </div>
         <div class="keyboard">
-            <div class="row">
-                <button class="key" onclick="op='ln'; operate()">
+                <button class="key " onclick="op='ln'; operate()">
                     ln
                 </button>
-                <button class="key" onclick="op='sin'; operate()">
+                <button class="key " onclick="op='sin'; operate()">
                     sin
                 </button>
                 <button class="key" onclick="op='cos'; operate()">
@@ -31,13 +30,13 @@
                 <button class="key" onclick="deleteItem()">
                     delete
                 </button>
-                <button class="key" onclick="updateExp('+')">
+                <button class="key one" onclick="updateExp('+')">
                     +    
                 </button>
-                <button class="key" onclick="updateExp('-')">
+                <button class="key three" name="minus" onclick="updateExp('-')">
                     -
                 </button>
-                <button class="key" onclick="operate()">
+                <button class="key two" onclick="operate()">
                     =
                 </button>
                 <button class="key" onclick="updateExp('*')">
@@ -79,7 +78,6 @@
                 <button class="key" onclick="updateExp(0)">
                     0
                 </button>
-            </div>
             </div>
         </div>
     <script type="text/javascript" src="app.js"></script>
