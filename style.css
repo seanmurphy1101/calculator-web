@@ -65,4 +65,6 @@ button:hover{
     margin: auto;
     border: 2px solid;
 }
-
+.buttonClass{
+    margin: 8px 10px 10px 8px;
+}
